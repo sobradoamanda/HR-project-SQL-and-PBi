@@ -1,11 +1,12 @@
-﻿Marketing;494;47;0,0951
+﻿department;total_count;terminated_count;termination_rate
+Marketing;494;47;0,0951
 Business Development;1642;158;0,0962
 Services;1686;183;0,1085
 Product Management;641;71;0,1108
 Support;954;106;0,1111
 Accounting;3333;374;0,1122
 Sales;1832;206;0,1124
-Engineering;6686;759;0,1135
+Engineering;6686;760;0,1137
 Human Resources;1807;207;0,1146
 Training;1692;199;0,1176
 Research and Development;1084;130;0,1199
