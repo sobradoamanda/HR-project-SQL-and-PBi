@@ -82,7 +82,7 @@ SELECT
 		 ELSE '61+' 
 	END AS age_group, count(*) AS count
 FROM hr_information
-WHERE termdate IS NOT NULL
+WHERE termdate IS NULL
 GROUP BY CASE WHEN age BETWEEN 22 AND 30 THEN '22-30'
 		 WHEN age BETWEEN 31 AND 40 THEN '31-40'
 		 WHEN age BETWEEN 41 AND 50 THEN '41-50'
@@ -98,7 +98,7 @@ SELECT
 		 ELSE '61+' 
 	END AS age_group, gender, count(*) AS count
 FROM hr_information
-WHERE termdate IS NOT NULL
+WHERE termdate IS NULL
 GROUP BY CASE WHEN age BETWEEN 22 AND 30 THEN '22-30'
 		 WHEN age BETWEEN 31 AND 40 THEN '31-40'
 		 WHEN age BETWEEN 41 AND 50 THEN '41-50'
@@ -154,13 +154,13 @@ ORDER BY count DESC;
 
 -- How has the company's employee count changed over time based on hire and term dates?
 
-SELECT subquery.YEAR, subquery.hires, subquery.terminations, subquery.hires-subquery.terminations AS net_change, (subquery.hires - subquery.terminations)*100/NULLIF(subquery.hires,0) AS net_change_percent
+SELECT subquery.year, subquery.hires, subquery.terminations, subquery.hires-subquery.terminations AS net_change, (subquery.hires - subquery.terminations)*100/NULLIF(subquery.hires,0) AS net_change_percent
 FROM (
 	SELECT YEAR(hire_date) AS YEAR, COUNT(*) AS hires, SUM(CASE WHEN termdate IS NOT NUll AND termdate <= GETDATE() THEN 1 ELSE 0 END) AS terminations
 	FROM hr_information
 	GROUP BY YEAR(hire_date)
 	) AS subquery 
-ORDER BY subquery.YEAR ASC;
+ORDER BY subquery.year ASC;
 
 -- What is the tenure distribution for each department?
 
@@ -168,3 +168,5 @@ SELECT department, AVG(DATEDIFF(YEAR, hire_date, termdate)) AS avg_tenure
 FROM hr_information
 WHERE termdate IS NOT NULL AND termdate <= GETDATE()
 GROUP BY department;
+
+
