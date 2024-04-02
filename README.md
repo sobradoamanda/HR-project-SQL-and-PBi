@@ -22,7 +22,8 @@ The main goal of this project is to clean and analyze data from an HR Dataset an
 ### Data visualization 
 ![Bi1](https://github.com/sobradoamanda/HR-project-SQL-and-PBi/assets/163925197/8c7338f7-6ecf-4a2b-b0f4-a5411f757291)
 
-![Bi2](https://github.com/sobradoamanda/HR-project-SQL-and-PBi/assets/163925197/4efb8baa-feaf-4a0e-a19e-b901a5345cfa)
+![image](https://github.com/sobradoamanda/HR-project-SQL-and-PBi/assets/163925197/adfe9846-dfd8-48b2-abe7-c1591ecd3f06)
+
 
 ### Built With
 
